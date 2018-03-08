@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="GroceryApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body>
+<body ng-controller="GroceryAppCtrl as ctrl">
 
 <div class="container mt-2">
     <div class="row">
@@ -36,11 +36,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" placeholder="Add a Grocery Item" class="form-control">
+                            <input type="text" placeholder="Add a Grocery Item" class="form-control" ng-model="ctrl.item">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-teal">Add Item</a>
+                        <a class="btn btn-teal" ng-click="ctrl.addItem()">Add Item</a>
                     </div>
                     <div class="col-md-3">
 
@@ -60,8 +60,8 @@
                         <h3>Your Grocery List</h3>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-success">Edit Items</a>
-                        <a class="btn btn-success">Done</a>
+                        <a class="btn btn-success" ng-hide="ctrl.editMode" ng-click="ctrl.enableEditMode()">Edit Items</a>
+                        <a class="btn btn-success" ng-show="ctrl.editMode" ng-click="ctrl.disableEditMode()">Done</a>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -75,17 +75,17 @@
         <div class="col">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="card card-body text-center bg-light text-dark m-2">
+                <div class="col-md-10" >
+                    <div class="card card-body text-center bg-light text-dark m-2" ng-repeat="item in ctrl.groceryList">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h3>item</h3>
+                                <h3 ng-hide="ctrl.editMode">{{item}}</h3>
                                 <div class="form-group">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" ng-model="item" ng-show="ctrl.editMode">
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <a class="btn btn-danger">Delete</a>
+                                <a class="btn btn-danger" ng-hide="ctrl.editMode" ng-click="ctrl.deleteItem($index)">Delete</a>
                             </div>
                         </div>
                     </div>
