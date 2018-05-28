@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../img/person1.jpg">
+    <title>UiBrains Dashboard</title>
+</head>
+<body>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-warning" href="index.html">
+           <i class="fa fa fa-snowflake "></i> UiBrains
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavBar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavBar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                       <i class="fa fa-chart-bar text-muted"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posts.html">
+                       <i class="fa fa-list text-muted"></i> Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">
+                       <i class="fa fa-sitemap text-muted"></i> Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users.html">
+                       <i class="fa fa-users text-muted"></i> Users</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.html">
+                       <i class="fa fa-sign-in-alt text-muted"></i> Naveen</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.html">
+                           <i class="fa fa-user-circle"></i> Profile</a>
+                        <a class="dropdown-item" href="settings.html">
+                           <i class="fa fa-asterisk"></i> Settings</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                       <i class="fa fa-sign-out-alt text-muted"></i> LogOut</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- DashBoard Section -->
+<section class="p-2 bg-teal text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1><i class="fa fa-chart-bar"></i> Dashboard</h1>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Buttons Section -->
+<section class="p-3 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="" class="btn btn-primary btn-block" data-target="#postsModal" data-toggle="modal">
+                   <i class="fa fa-plus-circle"></i> Add Post</a>
+            </div>
+            <div class="col-md-4">
+                <a href="" class="btn btn-success btn-block" data-target="#categoryModal" data-toggle="modal">
+                    <i class="fa fa-plus-circle"></i> Add Category</a>
+            </div>
+            <div class="col-md-4">
+                <a href="" class="btn btn-warning btn-block" data-target="#userModal" data-toggle="modal">
+                    <i class="fa fa-plus-circle"></i> Add User</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Posts Modal-->
+<div class="modal" id="postsModal">
+    <div class="modal-dialog modal-lg animated zoomInRight">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h3 class="card-title">Add Post</h3>
+                <a class="close" data-dismiss="modal">
+                    <i class="fa fa-window-close "></i>
+                </a>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category">
+                            <option >Web Development</option>
+                            <option >Health & Wellness</option>
+                            <option >Technology</option>
+                            <option >Entertainment</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Image Upload</label>
+                        <input type="file" class="form-control-file">
+                        <small class="form-text text-muted">Max Size 3MB</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Body</label>
+                        <textarea class="form-control" name="editor1">
+
+                        </textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <a class="btn btn-primary" href="index.html">Add Post</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Category Modal-->
+<div class="modal" id="categoryModal">
+    <div class="modal-dialog modal-lg animated flip">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h3 class="card-title">Add Category</h3>
+                <a class="close" data-dismiss="modal">
+                    <i class="fa fa-window-close "></i>
+                </a>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Category Name">
+                    </div>
+                    <div class="form-group">
+                       <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <a class="btn btn-success" href="index.html">Add Category</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- User Modal-->
+<div class="modal" id="userModal">
+    <div class="modal-dialog modal-lg animated rubberBand">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <h3 class="card-title">Add User</h3>
+                <a class="close" data-dismiss="modal">
+                    <i class="fa fa-window-close "></i>
+                </a>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="User Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <a class="btn btn-warning" href="index.html">Add User</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Main Section -->
+<section class="p-2 mt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h2>Latest Posts</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-dark text-white">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date Posted</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>18th,Feb,2018</td>
+                                    <td>
+                                        <a class="btn btn-outline-secondary btn-sm">Details <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <i class="fa fa-list fa-4x"></i>
+                            </div>
+                            <div class="col">
+                                <h1 class="display-3">07</h1>
+                                <h3>Posts</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="posts.html">
+                            <h5 class="text-primary">View Details <i class="fa fa-arrow-alt-circle-right"></i></h5>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header bg-success text-white text-center">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <i class="fa fa-sitemap fa-4x"></i>
+                            </div>
+                            <div class="col">
+                                <h1 class="display-3">04</h1>
+                                <h6>Categories</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="categories.html">
+                            <h5 class="text-success">View Details <i class="fa fa-arrow-alt-circle-right"></i></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header bg-warning text-white text-center">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <i class="fa fa-users fa-4x"></i>
+                            </div>
+                            <div class="col">
+                                <h1 class="display-3">06</h1>
+                                <h3>Users</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="users.html">
+                            <h5 class="text-warning">View Details <i class="fa fa-arrow-alt-circle-right"></i></h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Footer -->
+<section class="p-3 mt-3 text-white text-center bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Copyright &copy; 2018, UiBrains.com</h3>
+                <p>All Rights Reserved</p>
+                <p>Developed & Maintained by
+                    <a class="text-warning" href="https://github.com/thenaveensaggam" target="_blank">
+                       <i class="fa fa-user-circle"></i> Naveen Saggam</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- BODY ENDS -->
+<script src="../bootstrap/js/fontawesome-all.js"></script>
+<script src="../bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="../bootstrap/js/popper.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/mdb.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
+</body>
+</html>
